@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Adicionar Funcionários</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<h1>Adicionar Funcionários</h1>
+
+	<form>
+		<label for="nome">Nome:</label>
+		<input type="text" id="nome" name="nome"><br>
+
+		<label for="diasTrabalhados">Dias trabalhados:</label>
+		<input type="text" id="diasTrabalhados" name="diasTrabalhados"><br>
+
+		<label for="qtdAlmocos">Quantidade de almoços:</label>
+		<input type="text" id="qtdAlmocos" name="qtdAlmocos"><br>
+
+		<label for="qtdJantares">Quantidade de jantares:</label>
+		<input type="text" id="qtdJantares" name="qtdJantares"><br>
+
+		<input type="button" value="Adicionar" onclick="adicionarFuncionario()">
+	</form>
+
+	<table id="tabelaFuncionarios">
+		<tr>
+			<th>Nome</th>
+			<th>Dias Trabalhados</th>
+			<th>Quantidade de Almoços</th>
+			<th>Quantidade de Jantares</th>
+		</tr>
+	</table>
+
+	<input type="button" value="Enviar por E-mail" onclick="enviarEmail()">
+
+	<script type="text/javascript" src="assets/js/recharge.js"></script>
+</body>
+</html>

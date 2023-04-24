@@ -1,0 +1,45 @@
+body {
+	background-color: green;
+	color: white;
+}
+
+form {
+	margin-bottom: 20px;
+}
+
+input[type="text"], input[type="button"] {
+	padding: 5px;
+	border-radius: 5px;
+	border: none;
+	margin-right: 10px;
+}
+
+input[type="button"] {
+	background-color: white;
+	color: green;
+	cursor: pointer;
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+th, td {
+	text-align: left;
+	padding: 8px;
+}
+
+th {
+	background-color: white;
+	color: green;
+	font-weight: bold;
+}
+
+tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+
+tr:hover {
+	background-color: #ddd;
+}
