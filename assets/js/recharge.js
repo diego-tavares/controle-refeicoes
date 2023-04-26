@@ -69,5 +69,3 @@ function enviarEmail() {
 
   window.location.href = emailCorpo;
 }
-
-adicionarFuncionario();
