@@ -1,4 +1,3 @@
-
 var funcionarios = [];
 
 function adicionarFuncionario() {
@@ -6,6 +5,12 @@ function adicionarFuncionario() {
   var diasTrabalhados = document.getElementById("diasTrabalhados").value;
   var qtdAlmocos = document.getElementById("qtdAlmocos").value;
   var qtdJantares = document.getElementById("qtdJantares").value;
+
+  // Verifica se algum dos campos está vazio
+  if (nome === "" || diasTrabalhados === "" || qtdAlmocos === "" || qtdJantares === "") {
+    alert("Por favor, preencha todos os campos.");
+    return;
+  }
 
   var funcionario = {
     nome: nome,
@@ -18,6 +23,7 @@ function adicionarFuncionario() {
 
   atualizarTabela();
 }
+
 
 function atualizarTabela() {
   var tabela = document.getElementById("tabelaFuncionarios");
@@ -53,14 +59,20 @@ function atualizarTabela() {
 
 function enviarEmail() {
   var centroCusto = prompt("Informe o centro de custo:");
+  if (!centroCusto) {
+    return;
+  }
   var nomeProjeto = prompt("Informe o nome do projeto:");
+  if (!nomeProjeto) {
+    return;
+  }
   
   var corpoEmail = "";
   
-  corpoEmail += "Centro de Custo: " + centroCusto + "\n";
-  corpoEmail += "Nome do Projeto: " + nomeProjeto + "\n";
+  corpoEmail += "<b>Centro de Custo:</b> " + centroCusto + "\n";
+  corpoEmail += "Nome do Projeto: " + nomeProjeto + "\n\n";
 
-  
+
 
   for (var i = 0; i < funcionarios.length; i++) {
     var funcionario = funcionarios[i];
