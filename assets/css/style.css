@@ -1,93 +1,118 @@
-
 body {
-    background-color: #f2f2f2;
-    font-family: Arial, sans-serif;
-    }
-  
-    
-  h1 {
-    text-align: center;
-    margin-top: 30px;
-    margin-bottom: 20px;
-  }
-  
-  .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  form {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-bottom: 30px;
-  }
-  
-  form label,
-  form input {
-    margin-bottom: 10px;
-    width: 48%;
-  }
-  
-  form input {
-    padding: 10px;
-    border-radius: 5px;
-    border: none;
-  }
-  
-  form button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-  }
-  
-  table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  th {
-    background-color: #4CAF50;
-    color: white;
-    text-align: left;
-    padding: 8px;
-  }
-  
-  tr:nth-child(even) {
-    background-color: #f2f2f2;
-  }
-  
-  td {
-    padding: 8px;
-  }
-  
-  #removerBtn {
-    background-color: #f44336;
-    color: white;
-    border: none;
-    padding: 5px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
+  background-color: #BADFDE;
+  font-family: Arial, sans-serif;
+}
 
-  .add-button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .add-button:hover {
-    background-color: #3e8e41;
-  }
-  
-  .sendBtn {
-    margin-top: 10px;
-  }
+h1 {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+form label,
+form input {
+  margin-bottom: 10px;
+  width: 48%;
+}
+
+form input {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+}
+
+form button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  background-color: #00375B;
+  color: white;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+td {
+  padding: 8px;
+  border-bottom: 1px #00375B solid;
+}
+
+button {
+  background-color: #00375B;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #38B6AB;
+}
+
+#removerBtn {
+  background-color: #00375B;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-button {
+  background-color: #00375B;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-button:hover {
+  background-color: #38B6AB;
+}
+
+.sendBtn {
+  margin-top: 10px;
+  background-color: #00375B;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.sendBtn:hover {
+  background-color: #38B6AB;
+}
