@@ -52,7 +52,15 @@ function atualizarTabela() {
 }
 
 function enviarEmail() {
+  var centroCusto = prompt("Informe o centro de custo:");
+  var nomeProjeto = prompt("Informe o nome do projeto:");
+  
   var corpoEmail = "";
+  
+  corpoEmail += "Centro de Custo: " + centroCusto + "\n";
+  corpoEmail += "Nome do Projeto: " + nomeProjeto + "\n";
+
+  
 
   for (var i = 0; i < funcionarios.length; i++) {
     var funcionario = funcionarios[i];
@@ -62,6 +70,7 @@ function enviarEmail() {
     corpoEmail += "Quantidade de almoços: " + funcionario.qtdAlmocos + "\n";
     corpoEmail += "Quantidade de jantares: " + funcionario.qtdJantares + "\n\n";
   }
+  
 
   var assuntoEmail = "Relatório de Funcionários";
   var emailDestino = "exemplo@exemplo.com";
