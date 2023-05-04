@@ -55,13 +55,14 @@ function atualizarTabela() {
 
     var removerCell = row.insertCell(4);
     var removerBtn = document.createElement("button");
-    removerBtn.innerText = "Remover";
+    removerBtn.innerHTML = "<i class='bx bx-trash'></i>";
     removerBtn.id = i;
     removerBtn.onclick = function() {
       funcionarios.splice(this.id, 1);
       atualizarTabela();
     };
     removerCell.appendChild(removerBtn);
+
   }
 }
 
@@ -75,10 +76,12 @@ function enviarEmail() {
   }
 
   if (!centroCusto) {
+    alert("Informe o centro de custo")
     return;
   }
   var nomeProjeto = prompt("Informe o nome do projeto:");
   if (!nomeProjeto) {
+    alert("Informe o nome do projeto")
     return;
   }
 
