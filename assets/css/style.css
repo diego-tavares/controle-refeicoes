@@ -1,73 +1,91 @@
+/* Identidade visual */
 body {
-  background-color: #BADFDE;
-  font-family: Arial, sans-serif;
+  background-color: #F9F8F8;
+  font-family: 'Poppins', sans-serif;
 }
 
 h1 {
   text-align: center;
   margin-top: 30px;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
+  color: #0D1C2E;
 }
 
 .container {
   max-width: 800px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 40px;
+  background-color: #FFFFFF;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
 }
 
 form {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
 form label,
 form input {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   width: 48%;
+  color: #4A4A4A;
+}
+
+form label {
+  font-weight: bold;
 }
 
 form input {
   padding: 10px;
   border-radius: 5px;
   border: none;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
 }
 
 form button {
-  background-color: #4CAF50;
+  background-color: #38B6AB;
   color: white;
-  padding: 10px;
+  padding: 10px 20px;
   border-radius: 5px;
   border: none;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-table {
-  width: 100%;
-  border-collapse: collapse;
+form button:hover {
+  background-color: #45D0C1;
 }
 
 th {
   background-color: #00375B;
   color: white;
   text-align: left;
-  padding: 8px;
+  padding: 10px 8px;
+}
+
+th:first-child{
+  border-radius:8px 0 0 0
+}
+
+th:last-child{
+  border-radius:0 8px 0 0
 }
 
 tr:nth-child(even) {
-  background-color: #f2f2f2;
+  background-color: #F2F2F2;
 }
 
 td {
-  padding: 8px;
-  border-bottom: 1px #00375B solid;
+  padding: 10px 8px;
+  border-bottom: 1px #EAEAEA solid;
 }
 
 button {
-  background-color: #00375B;
-  color: white;
-  padding: 10px;
+  background-color: #EFEFEF;
+  color: #4A4A4A;
+  padding: 10px 20px;
   border-radius: 5px;
   border: none;
   cursor: pointer;
@@ -75,17 +93,15 @@ button {
 }
 
 button:hover {
-  background-color: #38B6AB;
+  background-color: #E5E5E5;
 }
 
 #removerBtn {
-  background-color: #00375B;
-  color: white;
-  padding: 10px;
-  border-radius: 5px;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  background-color: #ED5545;
+}
+
+#removerBtn:hover {
+  background-color: #E74C3C;
 }
 
 .add-button {
@@ -95,7 +111,6 @@ button:hover {
   border-radius: 5px;
   border: none;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
 .add-button:hover {
@@ -110,9 +125,73 @@ button:hover {
   border-radius: 5px;
   border: none;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
 .sendBtn:hover {
   background-color: #38B6AB;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 8px; /* adicionando bordas arredondadas */
+
+  /* Responsividade */
+  @media screen and (max-width: 600px) {
+    font-size: 14px;
+  }
+}
+
+/* Estilos para células de cabeçalho em telas menores */
+@media screen and (max-width: 600px) {
+  th {
+    font-size: 16px;
+    padding: 10px 4px;
+  }
+
+  th:first-child {
+    padding-left: 0;
+  }
+
+  th:last-child {
+    padding-right: 0;
+  }
+}
+
+/* Estilos para células em telas menores */
+@media screen and (max-width: 600px) {
+  td {
+    font-size: 14px;
+    padding: 8px 4px;
+  }
+
+  td:last-child {
+    padding-right: 0;
+  }
+  
+}
+
+/* Estilos para linhas em telas menores */
+@media screen and (max-width: 600px) {
+  tr {
+    display: block;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #F2F2F2;
+  }
+  
+  td:first-child {
+    border-radius: 8px 8px 0 0;
+  }
+
+  td:last-child {
+    border-radius: 0 0 8px 8px;
+    padding-bottom: 16px;
+  }
 }

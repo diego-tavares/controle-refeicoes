@@ -1,5 +1,13 @@
 var funcionarios = [];
 
+function limparCampos() {
+  document.getElementById("nome").value = '';
+  document.getElementById("diasTrabalhados").value = '';
+  document.getElementById("qtdAlmocos").value = '';
+  document.getElementById("qtdJantares").value = '';
+  document.getElementById("nome").focus();
+}
+
 function adicionarFuncionario() {
   var nome = document.getElementById("nome").value;
   var diasTrabalhados = document.getElementById("diasTrabalhados").value;
@@ -22,8 +30,8 @@ function adicionarFuncionario() {
   funcionarios.push(funcionario);
 
   atualizarTabela();
+  limparCampos();
 }
-
 
 function atualizarTabela() {
   var tabela = document.getElementById("tabelaFuncionarios");
@@ -58,7 +66,14 @@ function atualizarTabela() {
 }
 
 function enviarEmail() {
+
   var centroCusto = prompt("Informe o centro de custo:");
+  
+  if (nome === "" || diasTrabalhados === "" || qtdAlmocos === "" || qtdJantares === "") {
+    alert("Por favor, preencha todos os campos.");
+    return;
+  }
+
   if (!centroCusto) {
     return;
   }
@@ -66,13 +81,28 @@ function enviarEmail() {
   if (!nomeProjeto) {
     return;
   }
-  
+
+  // Cria a mensagem de e-mail
+  var message = {
+    "subject": "Relatório de Funcionários",
+    "body": {
+      "contentType": "Text",
+      "content": ""
+    },
+    "toRecipients": [
+      {
+        "emailAddress": {
+          "address": "exemplo@exemplo.com"
+        }
+      }
+    ]
+  };
+
+  // Adiciona o corpo do e-mail
   var corpoEmail = "";
   
-  corpoEmail += "<b>Centro de Custo:</b> " + centroCusto + "\n";
+  corpoEmail += "Centro de Custo: " + centroCusto + "\n";
   corpoEmail += "Nome do Projeto: " + nomeProjeto + "\n\n";
-
-
 
   for (var i = 0; i < funcionarios.length; i++) {
     var funcionario = funcionarios[i];
@@ -82,11 +112,33 @@ function enviarEmail() {
     corpoEmail += "Quantidade de almoços: " + funcionario.qtdAlmocos + "\n";
     corpoEmail += "Quantidade de jantares: " + funcionario.qtdJantares + "\n\n";
   }
-  
 
-  var assuntoEmail = "Relatório de Funcionários";
-  var emailDestino = "exemplo@exemplo.com";
-  var emailCorpo = "mailto:" + emailDestino + "?subject=" + encodeURIComponent(assuntoEmail) + "&body=" + encodeURIComponent(corpoEmail);
+  message.body.content = corpoEmail;
 
-  window.location.href = emailCorpo;
+  // Autentica a solicitação usando o token de acesso
+  var accessToken = "<SEU_TOKEN_DE_ACESSO_AQUI>";
+
+  var requestHeaders = {
+    "Authorization": "Bearer " + accessToken,
+    "Content-Type": "application/json"
+  };
+
+  // Envia a mensagem de e-mail
+  var sendEmailUrl = "https://outlook.office.com/api/v2.0/me/sendmail";
+
+  var xhr = new XMLHttpRequest();
+  xhr.open("POST", sendEmailUrl, true);
+  xhr.setRequestHeader("Authorization", requestHeaders.Authorization);
+  xhr.setRequestHeader("Content-Type", requestHeaders["Content-Type"]);
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === 4) {
+      if (xhr.status === 202) {
+        console.log("Mensagem enviada com sucesso.");
+      } else {
+        console.log("Falha ao enviar a mensagem.");
+      }
+    }
+  };
+  xhr.send(JSON.stringify(message));
 }
+
