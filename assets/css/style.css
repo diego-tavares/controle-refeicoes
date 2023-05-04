@@ -1,14 +1,23 @@
-/* Identidade visual */
+
 body {
   background-color: #F9F8F8;
   font-family: 'Poppins', sans-serif;
+  font-size: 16px;
 }
 
 h1 {
   text-align: center;
   margin-top: 30px;
-  margin-bottom: 40px;
+  margin-bottom: 10px;
   color: #0D1C2E;
+  padding: 20px;
+}
+.containerTitulo {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 0px;
+  background-color: #FFFFFF;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
 }
 
 .container {
@@ -41,7 +50,11 @@ form input {
   padding: 10px;
   border-radius: 5px;
   border: none;
-  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.5);
+}
+
+form input:focus {
+outline: none ;
 }
 
 form button {
@@ -52,6 +65,7 @@ form button {
   border: none;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  
 }
 
 form button:hover {
@@ -90,6 +104,7 @@ button {
   border: none;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  
 }
 
 button:hover {
@@ -111,6 +126,7 @@ button:hover {
   border-radius: 5px;
   border: none;
   cursor: pointer;
+  font-weight: bold;
 }
 
 .add-button:hover {
@@ -125,6 +141,7 @@ button:hover {
   border-radius: 5px;
   border: none;
   cursor: pointer;
+  font-weight: bold;
 }
 
 .sendBtn:hover {
@@ -145,53 +162,32 @@ table {
 }
 
 /* Estilos para células de cabeçalho em telas menores */
-@media screen and (max-width: 600px) {
-  th {
-    font-size: 16px;
-    padding: 10px 4px;
+@media screen and (max-width: 800px) {
+  body {
+    min-height: 150vh;
+  }
+  h1 {
+    font-size: 30px;
   }
 
-  th:first-child {
-    padding-left: 0;
-  }
-
-  th:last-child {
-    padding-right: 0;
-  }
-}
-
-/* Estilos para células em telas menores */
-@media screen and (max-width: 600px) {
-  td {
-    font-size: 14px;
-    padding: 8px 4px;
-  }
-
-  td:last-child {
-    padding-right: 0;
+  .container {
+    padding: 10px;
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
   
-}
-
-/* Estilos para linhas em telas menores */
-@media screen and (max-width: 600px) {
-  tr {
+  table {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 800px;
+    overflow-x: auto;
     display: block;
-    margin-bottom: 16px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
   }
   
-  tr:nth-child(even) {
-    background-color: #F2F2F2;
+  tfoot {
+    display: table-row-group;
   }
   
-  td:first-child {
-    border-radius: 8px 8px 0 0;
-  }
-
-  td:last-child {
-    border-radius: 0 0 8px 8px;
-    padding-bottom: 16px;
-  }
 }

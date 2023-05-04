@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <head>
 	<title>Adicionar Funcionários</title>
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
@@ -7,24 +8,28 @@
 
 </head>
 <body>
+
+	<div class="containerTitulo">
 	<h1>Adicionar Funcionários</h1>
+	</div>
+<div class="container">
 
 	<form>
 		<label for="nome">Nome:</label>
 		<input type="text" id="nome" name="nome" autofocus><br>
-
+		
 		<label for="diasTrabalhados">Dias trabalhados:</label>
 		<input type="number" id="diasTrabalhados" name="diasTrabalhados"><br>
-
+		
 		<label for="qtdAlmocos">Quantidade de almoços:</label>
 		<input type="number" id="qtdAlmocos" name="qtdAlmocos"><br>
-
+		
 		<label for="qtdJantares">Quantidade de jantares:</label>
 		<input type="number" id="qtdJantares" name="qtdJantares"><br>
-
+		
 		<input class="add-button" type="button" value="Adicionar" onclick="adicionarFuncionario()">
 	</form>
-
+	
 	<table id="tabelaFuncionarios">
 		<tr>
 			<th>Nome</th>
@@ -33,10 +38,11 @@
 			<th>Quantidade de Jantares</th>
 		</tr>
 	</table>
-
+	
 	<input class="sendBtn" type="button" value="Enviar por E-mail" onclick="enviarEmail()">
-
+	
 	
 	<script type="text/javascript" src="assets/js/recharge.js"></script>
+</div>
 </body>
 </html>
