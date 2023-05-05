@@ -81,7 +81,7 @@ function enviarEmail() {
   }
   var nomeProjeto = prompt("Informe o nome do projeto:");
   if (!nomeProjeto) {
-    alert("Informe o nome do projeto")
+    alert("Informe o nome do Projeto")
     return;
   }
 
@@ -95,7 +95,7 @@ function enviarEmail() {
     "toRecipients": [
       {
         "emailAddress": {
-          "address": "exemplo@exemplo.com"
+          "address": "diego.tavares@3geoconsult.com.br"
         }
       }
     ]
@@ -119,7 +119,7 @@ function enviarEmail() {
   message.body.content = corpoEmail;
 
   // Autentica a solicitação usando o token de acesso
-  var accessToken = "<SEU_TOKEN_DE_ACESSO_AQUI>";
+  var accessToken = "<9d3ea961-a268-46ff-a7e6-be848cad1e0b>";
 
   var requestHeaders = {
     "Authorization": "Bearer " + accessToken,
